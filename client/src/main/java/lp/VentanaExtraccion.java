@@ -21,7 +21,7 @@ public class VentanaExtraccion {
         botonExtraccion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //JOptionPane.showMessageDialog(null, "Extraccion realizada");
+                JOptionPane.showMessageDialog(null, "Extraccion realizada");
                 controller.extraerDatos();
 
             }
