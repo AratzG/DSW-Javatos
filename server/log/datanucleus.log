@@ -820,3 +820,20 @@ org.datanucleus.exceptions.NucleusUserException: Clase "ld.Repositorio" campo "m
 13:29:02,758 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Alumno\Desktop\Javatos\target\classes\ld\Topico.class
 13:29:02,758 (main) INFO  [DataNucleus.SchemaTool] - >>  C:\Users\Alumno\Desktop\Javatos\target\classes\ld\Usuario.class
 13:29:13,737 (main) INFO  [DataNucleus.SchemaTool] - DataNucleus SchemaTool ha terminado con exito
+15:08:46,691 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.7) para el API "JDO" utilisando el JRE "{2}"
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - La clase "ld.Commit" esta enhanced.
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Commit
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - La clase "ld.Equipo" esta enhanced.
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Equipo
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - La clase "ld.Organizacion" esta enhanced.
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Organizacion
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - La clase "ld.Repositorio" esta enhanced.
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Repositorio
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - La clase "ld.Topico" esta enhanced.
+15:08:46,863 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Topico
+15:08:46,879 (main) INFO  [DataNucleus.Enhancer] - La clase "ld.Usuario" esta enhanced.
+15:08:46,879 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Usuario
+15:08:46,879 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 6 clases. Tiempos : input=141 ms, enhance=47 ms, total=188 ms. Compruebe el LOG para los detalles
+15:08:50,619 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.7) para el API "JDO" utilisando el JRE "{2}"
+15:08:50,697 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 0 clases. Tiempos : input=78 ms, enhance=0 ms, total=78 ms. Compruebe el LOG para los detalles
+15:08:50,697 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado sin enhance ninguna clase. Compruebe el LOG para los detalles.
