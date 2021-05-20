@@ -6,3 +6,5 @@ public interface IServer {
     public void extraerDatos() throws RemoteException;
     String sayHello() throws RemoteException;
 }
+
+
