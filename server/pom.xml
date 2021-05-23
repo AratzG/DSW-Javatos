@@ -3,16 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.datanucleus</groupId>
-    <artifactId>Datanucleus-Samples-JDO-MySQL</artifactId>
+    <artifactId>Pom</artifactId>
     <packaging>pom</packaging>
     <version>3.0</version>
-    <modules>
-        <module>client</module>
-        <module>server</module>
-    </modules>
 
-    <name>DataNucleus AccessPlatform Tutorial for JDO</name>
-    <url>http://www.datanucleus.org</url>
+
+    <name>DSW Javatos parte servidor</name>
+    <url>https://github.com/AratzG/DSW-Javatos</url>
 
     <properties>
         <config.files.dir>src/main/resources</config.files.dir>
@@ -49,7 +46,9 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <!--
             <scope>test</scope>
+            -->
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
@@ -57,11 +56,14 @@
             <version>[1.2.17, )</version>
         </dependency>
 
+
     </dependencies>
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
+        <!--
         <testSourceDirectory>src/test/java</testSourceDirectory>
+        -->
 
         <resources>
             <resource>
@@ -73,6 +75,8 @@
                 </includes>
             </resource>
         </resources>
+
+
 
         <plugins>
             <plugin>
@@ -127,7 +131,7 @@
                 <version>1.2.1</version>
 
                 <configuration>
-                    <mainClass>es.deusto.ingenieria.sd.jdo.accounts.Main</mainClass>
+                    <mainClass>file:${config.files.dir}/remote.Server</mainClass>
                     <systemProperties>
                         <systemProperty>
                             <key>log4j.configuration</key>
@@ -153,6 +157,8 @@
                     <nohelp>true</nohelp>
                 </configuration>
             </plugin>
+
+
 
         </plugins>
     </build>
