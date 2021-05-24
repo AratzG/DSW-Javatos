@@ -1,5 +1,8 @@
 package remote;
 
+import appServices.*;
+import ld.Repositorio;
+
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
@@ -31,6 +34,40 @@ public class Server extends UnicastRemoteObject implements IServer {
     public void extraerDatos() throws RemoteException {
 
     }
+
+    public void crearCommitService(){
+        CommitService commitService = new CommitService();
+        //commitService.crearCommit();
+    }
+
+    public void crearEquipoService(){
+        EquipoService equipoService = new EquipoService();
+        //equipoService.crearEquipo();
+    }
+
+    public void crearOrganizacionService(){
+        OrganizacionService organizacionService = new OrganizacionService();
+        //organizacionService.crearOrganizacion();
+    }
+
+    public void crearRepositorioService(){
+        RepositorioService repositorioService = new RepositorioService();
+        //repositorioService.crearRepositorio();
+    }
+
+    public void crearTopicoService(){
+        TopicoService topicoService = new TopicoService();
+        //topicoService.crearTopico();
+    }
+
+    public void crearUsuarioService(){
+        UsuarioService usuarioService = new UsuarioService();
+        //
+    }
+
+
+
+
 
     public static void main(String[] args) {
         try {
