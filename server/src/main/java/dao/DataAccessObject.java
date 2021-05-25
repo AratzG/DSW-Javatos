@@ -5,7 +5,9 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-public class DataAccessObject {
+public class DataAccessObject
+{
+    /*
     // Load Persistence Manager Factory - referencing the Persistence Unit defined in persistence.xml
     PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
@@ -34,8 +36,8 @@ public class DataAccessObject {
             tx.begin();
 
             //Descomentar para ejemplo de creacion de usuarios
-            /*pm.makePersistent(usuario1);
-            pm.makePersistent(usuario2);*/
+            pm.makePersistent(usuario1);
+            pm.makePersistent(usuario2);
 
             //End the transaction
             tx.commit();
@@ -78,9 +80,9 @@ public class DataAccessObject {
          tx.begin();
 
          //Delete users from DB
-         /*Query<Usuario> query1 = pm.newQuery(Usuario.class);
+         Query<Usuario> query1 = pm.newQuery(Usuario.class);
          System.out.println(" * '" + query1.deletePersistentAll() +
-               "' users and their accounts deleted from the DB.");*/
+               "' users and their accounts deleted from the DB.");
 
          //End the transaction
          tx.commit();
@@ -104,6 +106,6 @@ public class DataAccessObject {
             pm.close();
          }
       }
-
     }
+    */
 }

@@ -1,4 +1,4 @@
-/*package ld;
+package ld;
 
 import java.util.List;
 
@@ -11,14 +11,19 @@ import javax.jdo.Transaction;
 
 public class Main
 {
-
+	/*
 	public static void main(String args[])
-	{
+    {
+	    System.out.println("Hola");
+
 		Usuario usuario1 = new Usuario(1, "admin",
 				"DBS", "Donostia", "admin@deusto.es");
 
 		Usuario usuario2 = new Usuario(2, "Javato",
 				"Javatos SA", "Silicon Valley", "javatos@gmail.com");
+
+		Usuario usuario3 = new Usuario(3, "test",
+				"Test SA", "Testlandia", "test@test.com");
 
 
 		// Load Persistence Manager Factory - referencing the Persistence Unit defined in persistence.xml
@@ -43,8 +48,9 @@ public class Main
 			//Start the transaction
 			tx.begin();
 
-			pm.makePersistent(usuario1);
-			pm.makePersistent(usuario2);
+			//pm.makePersistent(usuario1);
+			//pm.makePersistent(usuario2);
+			//pm.makePersistent(usuario3);
 
 			//End the transaction
 			tx.commit();
@@ -71,7 +77,7 @@ public class Main
 
 		//SI QUEREMOS BORRAR LOS USUARIOS, DESCOMENTAR ESTE TROZO
 
-      /*
+		/*
       try
       {
          System.out.println("- Cleaning the DB...");
@@ -110,6 +116,7 @@ public class Main
          }
       }
 
+        System.out.println("Adiós");
 	}
+	*/
 }
-*/
