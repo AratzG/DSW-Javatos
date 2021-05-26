@@ -16,7 +16,6 @@ public class Organizacion {
 
     private String nomOrg;
     private String descripcion;
-    private Date fechaCreacion;
 
     @Join
     @Persistent(mappedBy="orgsUsuario", dependentElement="true")
@@ -25,11 +24,10 @@ public class Organizacion {
     public Organizacion() {
     }
 
-    public Organizacion(int idOrg, String nomOrg, String descripcion, Date fechaCreacion) {
+    public Organizacion(int idOrg, String nomOrg, String descripcion) {
         this.idOrg = idOrg;
         this.nomOrg = nomOrg;
         this.descripcion = descripcion;
-        this.fechaCreacion = fechaCreacion;
     }
 
     public int getIdOrg() {
@@ -54,13 +52,5 @@ public class Organizacion {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public Date getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
     }
 }

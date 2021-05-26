@@ -12,6 +12,8 @@ import java.util.List;
 public class UsuarioDAO {
 
     public static void extraerUsuarios() {
+        limpiarBD();
+
         List<Usuario> listaUsuarios = new ArrayList<>();
         int aux = 0;
 
@@ -41,12 +43,10 @@ public class UsuarioDAO {
                 e.printStackTrace();
             }
         }
-        limpiarBD();
         rellenarBD(listaUsuarios);
     }
 
     public static void limpiarBD() {
-
         PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
         PersistenceManager pm = null;
 
@@ -83,7 +83,6 @@ public class UsuarioDAO {
     }
 
     public static void rellenarBD(List<Usuario> listaUsuarios) {
-
         PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
         PersistenceManager pm = null;
 

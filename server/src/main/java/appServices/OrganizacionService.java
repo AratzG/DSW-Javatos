@@ -1,5 +1,6 @@
 package appServices;
 
+import dao.OrganizacionDAO;
 import ld.Organizacion;
 import ld.Usuario;
 
@@ -11,7 +12,8 @@ public class OrganizacionService {
     private List<Organizacion> orgs = new ArrayList<>();
 
     public OrganizacionService() {
-        //rellenar lista mediante la BD
+        OrganizacionDAO.extraerOrgs();
+        //ahora, una vez rellena la BD, rellenar la lista con la info de la BD
     }
 
     public synchronized void crearOrg() {

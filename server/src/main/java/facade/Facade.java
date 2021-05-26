@@ -71,6 +71,8 @@ public class Facade extends UnicastRemoteObject implements IServer {
     }
 
     public static void main(String[] args) {
+        crearUsuarioService();
+        crearOrganizacionService();
         /*
         //Conexión cliente-servidor
         try {

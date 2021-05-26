@@ -1047,3 +1047,59 @@ org.datanucleus.exceptions.NucleusUserException: Clase "ld.Repositorio" campo "m
 02:08:18,810 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Usuario.class" con definicion enhanced
 02:08:18,810 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Usuario
 02:08:18,810 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 6 clases. Tiempos : input=203 ms, enhance=109 ms, total=312 ms. Compruebe el LOG para los detalles
+02:33:34,902 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.7) para el API "JDO" utilisando el JRE "{2}"
+02:33:35,174 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Commit.class" con definicion enhanced
+02:33:35,174 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Commit
+02:33:35,190 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Equipo.class" con definicion enhanced
+02:33:35,190 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Equipo
+02:33:35,198 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Organizacion.class" con definicion enhanced
+02:33:35,198 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Organizacion
+02:33:35,206 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Repositorio.class" con definicion enhanced
+02:33:35,206 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Repositorio
+02:33:35,214 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Topico.class" con definicion enhanced
+02:33:35,214 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Topico
+02:33:35,222 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Usuario.class" con definicion enhanced
+02:33:35,222 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Usuario
+02:33:35,222 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 6 clases. Tiempos : input=184 ms, enhance=120 ms, total=304 ms. Compruebe el LOG para los detalles
+02:34:15,498 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.7) para el API "JDO" utilisando el JRE "{2}"
+02:34:15,748 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Commit.class" con definicion enhanced
+02:34:15,748 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Commit
+02:34:15,756 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Equipo.class" con definicion enhanced
+02:34:15,756 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Equipo
+02:34:15,764 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Organizacion.class" con definicion enhanced
+02:34:15,764 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Organizacion
+02:34:15,772 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Repositorio.class" con definicion enhanced
+02:34:15,780 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Repositorio
+02:34:15,780 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Topico.class" con definicion enhanced
+02:34:15,788 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Topico
+02:34:15,788 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Usuario.class" con definicion enhanced
+02:34:15,796 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Usuario
+02:34:15,796 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 6 clases. Tiempos : input=178 ms, enhance=104 ms, total=282 ms. Compruebe el LOG para los detalles
+02:38:52,605 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.7) para el API "JDO" utilisando el JRE "{2}"
+02:38:52,918 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Commit.class" con definicion enhanced
+02:38:52,918 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Commit
+02:38:52,933 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Equipo.class" con definicion enhanced
+02:38:52,933 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Equipo
+02:38:52,933 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Organizacion.class" con definicion enhanced
+02:38:52,933 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Organizacion
+02:38:52,949 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Repositorio.class" con definicion enhanced
+02:38:52,949 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Repositorio
+02:38:52,949 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Topico.class" con definicion enhanced
+02:38:52,965 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Topico
+02:38:52,965 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Usuario.class" con definicion enhanced
+02:38:52,965 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Usuario
+02:38:52,965 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 6 clases. Tiempos : input=235 ms, enhance=110 ms, total=345 ms. Compruebe el LOG para los detalles
+02:41:04,381 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.7) para el API "JDO" utilisando el JRE "{2}"
+02:41:04,663 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Commit.class" con definicion enhanced
+02:41:04,663 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Commit
+02:41:04,678 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Equipo.class" con definicion enhanced
+02:41:04,694 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Equipo
+02:41:04,694 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Organizacion.class" con definicion enhanced
+02:41:04,694 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Organizacion
+02:41:04,709 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Repositorio.class" con definicion enhanced
+02:41:04,709 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Repositorio
+02:41:04,725 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Topico.class" con definicion enhanced
+02:41:04,725 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Topico
+02:41:04,725 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\test\DSW-Javatos\server\target\classes\ld\Usuario.class" con definicion enhanced
+02:41:04,725 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Usuario
+02:41:04,725 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 6 clases. Tiempos : input=219 ms, enhance=125 ms, total=344 ms. Compruebe el LOG para los detalles
