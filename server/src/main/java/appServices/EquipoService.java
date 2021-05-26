@@ -1,5 +1,6 @@
 package appServices;
 
+import dao.EquipoDAO;
 import ld.Commit;
 import ld.Equipo;
 
@@ -12,6 +13,7 @@ public class EquipoService {
 
     public EquipoService() {
         //rellenar lista con BD
+        EquipoDAO.extraerEquipos();
     }
 
     public synchronized void crearEquipo() {
