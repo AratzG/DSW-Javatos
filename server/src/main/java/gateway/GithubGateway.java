@@ -1,5 +1,6 @@
 package gateway;
 
+import ld.Usuario;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import javax.ws.rs.client.Client;
@@ -9,7 +10,9 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class GithubGateway
 {
@@ -32,34 +35,6 @@ public class GithubGateway
         }
         else {
             throw new Exception("BadAss error");
-        }
-    }
-
-    public static void main(String[] args) {
-
-        try {
-            GithubGateway g1 = new GithubGateway("users");
-            Response res1 = g1.makeGetRequest("");
-
-            //Print the response, as it is
-            System.out.println("Print the response, as it is");
-            System.out.println(res1);
-
-            //Print the response as String
-            //System.out.println("Print the response as String");
-            //System.out.println(res1.readEntity(String.class));
-
-            //Parse the response as JsonArray
-            System.out.println("Parse response as JSonArray");
-            JSONArray array = res1.readEntity(JSONArray.class);
-            System.out.println(array.size());
-
-            HashMap<String, String> object1 = (HashMap<String, String>)array.get(0);
-            System.out.println(object1);
-            System.out.println(object1.get("login"));
-
-        } catch (Exception e) {
-            System.out.println("Catched exception: " + e.getMessage());
         }
     }
 }

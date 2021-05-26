@@ -1,22 +1,28 @@
-package remote;
+package facade;
 
 import appServices.*;
+import dao.UsuarioDAO;
+import gateway.GithubGateway;
+import ld.Organizacion;
 import ld.Repositorio;
+import ld.Usuario;
+import remote.IServer;
 
+import javax.jdo.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.rmi.RemoteException;
 
-public class Server extends UnicastRemoteObject implements IServer {
+public class Facade extends UnicastRemoteObject implements IServer {
 
     private String serverName;
 
-    public Server() throws RemoteException {
+    public Facade() throws RemoteException {
         super();
     }
 
-    public Server(String serverName) throws RemoteException {
+    public Facade(String serverName) throws RemoteException {
         super();
         this.serverName = serverName;
     }
@@ -32,46 +38,43 @@ public class Server extends UnicastRemoteObject implements IServer {
 
     @Override
     public void extraerDatos() throws RemoteException {
-
+        crearUsuarioService();
+        crearOrganizacionService();
+        crearRepositorioService();
+        crearTopicoService();
+        crearCommitService();
+        crearEquipoService();
     }
 
-    public void crearCommitService(){
+    public static void crearCommitService(){
         CommitService commitService = new CommitService();
-        //commitService.crearCommit();
     }
 
-    public void crearEquipoService(){
+    public static void crearEquipoService(){
         EquipoService equipoService = new EquipoService();
-        //equipoService.crearEquipo();
     }
 
-    public void crearOrganizacionService(){
+    public static void crearOrganizacionService(){
         OrganizacionService organizacionService = new OrganizacionService();
-        //organizacionService.crearOrganizacion();
     }
 
-    public void crearRepositorioService(){
+    public static void crearRepositorioService(){
         RepositorioService repositorioService = new RepositorioService();
-        //repositorioService.crearRepositorio();
     }
 
-    public void crearTopicoService(){
+    public static void crearTopicoService(){
         TopicoService topicoService = new TopicoService();
-        //topicoService.crearTopico();
     }
 
-    public void crearUsuarioService(){
+    public static void crearUsuarioService(){
         UsuarioService usuarioService = new UsuarioService();
-        //
     }
-
-
-
-
 
     public static void main(String[] args) {
+        /*
+        //Conexión cliente-servidor
         try {
-            Server server = new Server();
+            Facade server = new Facade();
             IServer stub = (IServer) UnicastRemoteObject.exportObject(server, 0);
 
             // Bind the remote object's stub in the registry
@@ -83,5 +86,6 @@ public class Server extends UnicastRemoteObject implements IServer {
             System.err.println("Server exception: " + e.toString());
             e.printStackTrace();
         }
+         */
     }
 }

@@ -1,5 +1,6 @@
 package appServices;
 
+import dao.UsuarioDAO;
 import ld.Usuario;
 
 import java.util.ArrayList;
@@ -11,10 +12,11 @@ public class UsuarioService {
     private List<Usuario> usuarios = new ArrayList<>();
 
     public UsuarioService() {
-        //rellenar la lista con lo que está en la BD
+        UsuarioDAO.extraerUsuarios();
+        //ahora, una vez extraída la info, rellenar la lista con lo que está en la BD
     }
 
-    public synchronized void crearOrg() {
+    public synchronized void crearUsuario() {
         Usuario user = new Usuario();
         //añadir variables
         usuarios.add(user);
