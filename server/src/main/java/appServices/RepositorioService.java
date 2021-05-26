@@ -1,5 +1,6 @@
 package appServices;
 
+import dao.RepositorioDAO;
 import ld.Repositorio;
 import ld.Usuario;
 
@@ -12,6 +13,7 @@ public class RepositorioService {
 
     public RepositorioService() {
         //rellenar lista con BD
+        RepositorioDAO.extraerRepositorios();
     }
 
     public synchronized void crearRepo() {
