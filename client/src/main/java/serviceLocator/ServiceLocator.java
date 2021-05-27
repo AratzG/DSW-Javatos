@@ -9,7 +9,18 @@ public class ServiceLocator {
 
     IServer stubServer = null;
 
+    public ServiceLocator () {
+    }
+
     public void setService(String[] args) {
+
+        if(args.length!=3){
+            System.out.printf("Uso: java [policy] [codebase] client.Cliente [host] [port] [server]");
+            System.exit(0);
+        }
+       /* if(System.getSecurityManager()==null){
+            System.setSecurityManager(new SecurityManager());
+        }*/
 
         try
         {

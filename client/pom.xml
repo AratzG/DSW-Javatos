@@ -138,23 +138,22 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-           <!--
+
            <plugin>
                <groupId>org.codehaus.mojo</groupId>
                <artifactId>exec-maven-plugin</artifactId>
                <version>1.2.1</version>
 
                <configuration>
-                   <mainClass>file:${config.files.dir}/controller.Controller</mainClass>
-                   <systemProperties>
-                       <systemProperty>
-                           <key>log4j.configuration</key>
-                           <value>file:${config.files.dir}/log4j.properties</value>
-                       </systemProperty>
-                   </systemProperties>
+                   <mainClass>client.src.main.java.controller.Controller</mainClass>
+                   <arguments>
+                       <argument>${server.IP} </argument>
+                       <argument>${server.Port} </argument>
+                       <argument>${server.Name} </argument>
+                   </arguments>
                </configuration>
            </plugin>
-           -->
+
            <plugin>
                <artifactId>maven-assembly-plugin</artifactId>
                <configuration>
@@ -175,26 +174,4 @@
 
         </plugins>
     </build>
-    <profiles>
-        <!-- run as 'mvn exec:java -PCliente' -->
-        <profile>
-            <id>Cliente</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>
-                        <configuration>
-                            <mainClass>main.java.Controller.controller</mainClass>
-                            <arguments>
-                                <argument>${}</argument>
-                                <argument>${}</argument>
-                            </arguments>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>

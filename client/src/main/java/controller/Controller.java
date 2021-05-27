@@ -1,7 +1,7 @@
 package controller;
 
 import lp.VentanaExtraccion;
-import org.datanucleus.metadata.ClassPersistenceModifier;
+//import org.datanucleus.metadata.ClassPersistenceModifier;
 import serviceLocator.ServiceLocator;
 
 import java.rmi.RemoteException;
