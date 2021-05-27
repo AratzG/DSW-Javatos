@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.datanucleus</groupId>
     <artifactId>Pom</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>3.0</version>
 
 
@@ -16,17 +16,23 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <config.files.dir>src/main/resources</config.files.dir>
+        <encoding>UTF-8</encoding>
     </properties>
 
 
     <dependencies>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <!--
             <scope>test</scope>
+            -->
         </dependency>
     </dependencies>
+
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
@@ -78,7 +84,9 @@
                                 <property name="plugin_classpath" refid="maven.plugin.classpath"/>
 
                                 <ant antfile="${basedir}/build.xml">
+                                    <!--
                                     <target name="test"/>
+                                    -->
                                 </ant>
 
                             </target>
@@ -130,6 +138,7 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+           <!--
            <plugin>
                <groupId>org.codehaus.mojo</groupId>
                <artifactId>exec-maven-plugin</artifactId>
@@ -145,6 +154,7 @@
                    </systemProperties>
                </configuration>
            </plugin>
+           -->
            <plugin>
                <artifactId>maven-assembly-plugin</artifactId>
                <configuration>
@@ -165,5 +175,26 @@
 
         </plugins>
     </build>
-
+    <profiles>
+        <!-- run as 'mvn exec:java -PCliente' -->
+        <profile>
+            <id>Cliente</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <configuration>
+                            <mainClass>main.java.Controller.controller</mainClass>
+                            <arguments>
+                                <argument>${}</argument>
+                                <argument>${}</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
