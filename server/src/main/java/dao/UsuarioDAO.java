@@ -46,6 +46,35 @@ public class UsuarioDAO {
         rellenarBD(listaUsuarios);
     }
 
+    public static Usuario extraerUnUsuario(String accessPoint) {
+        //en este método descargamos un usuario a partir del accessPoint
+
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        Usuario user = new Usuario();
+
+        try {
+            GithubGateway c1 = new GithubGateway(accessPoint);
+            Response res1 = c1.makeGetRequest("");
+
+            //obtenemos la respuesta como objeto JSON
+            JSONObject u = res1.readEntity(JSONObject.class);
+
+            if(u.get("id") != null) user.setIdUsuario((int) u.get("id"));
+            if(u.get("login") != null) user.setNomUsuario(u.get("login").toString());
+            if(u.get("company") != null) user.setEmpresa(u.get("company").toString());
+            if(u.get("location") != null) user.setLocalizacion(u.get("location").toString());
+            if(u.get("email") != null) user.setEmail(u.get("email").toString());
+
+            listaUsuarios.add(user);
+
+        } catch (Exception e) {
+            System.out.println("Catched exception: " + e.getMessage());
+            e.printStackTrace();
+        }
+        rellenarBD(listaUsuarios);
+        return user;
+    }
+
     public static void limpiarBD() {
         PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
         PersistenceManager pm = null;

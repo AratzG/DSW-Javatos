@@ -34,7 +34,7 @@ public class GithubGateway
             return response;
         }
         else {
-            throw new Exception("BadAss error");
+            throw new Exception ("BadAss error");
         }
     }
 }

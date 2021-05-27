@@ -1,6 +1,7 @@
 package dao;
 import gateway.GithubGateway;
 import ld.Repositorio;
+import ld.Usuario;
 import org.json.simple.JSONObject;
 import javax.jdo.*;
 import javax.ws.rs.core.Response;
@@ -43,6 +44,31 @@ public class RepositorioDAO {
         rellenarBD(listaRepos);
     }
 
+    public static Repositorio extraerUnRepo(String accessPoint) {
+        //en este método descargamos un repositorio a partir del accessPoint
+
+        List<Repositorio> listaRepos = new ArrayList<>();
+        Repositorio repo = new Repositorio();
+
+        try {
+            GithubGateway c1 = new GithubGateway(accessPoint);
+            Response res1 = c1.makeGetRequest("");
+
+            //obtenemos la respuesta como objeto JSON
+            JSONObject o = res1.readEntity(JSONObject.class);
+
+            if(o.get("id") != null) repo.setIdRepo((int) o.get("id"));
+            if(o.get("name") != null) repo.setNomRepo(o.get("name").toString());
+
+            listaRepos.add(repo);
+
+        } catch (Exception e) {
+            System.out.println("Catched exception: " + e.getMessage());
+            e.printStackTrace();
+        }
+        rellenarBD(listaRepos);
+        return repo;
+    }
 
     public static void limpiarBD() {
         PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");

@@ -3,6 +3,7 @@ package facade;
 import appServices.*;
 import dao.UsuarioDAO;
 import gateway.GithubGateway;
+import ld.Equipo;
 import ld.Organizacion;
 import ld.Repositorio;
 import ld.Usuario;
@@ -38,43 +39,24 @@ public class Facade extends UnicastRemoteObject implements IServer {
 
     @Override
     public void extraerDatos() throws RemoteException {
-        crearUsuarioService();
-        crearOrganizacionService();
-        crearRepositorioService();
-        crearTopicoService();
-        crearCommitService();
-        crearEquipoService();
-    }
-
-    public static void crearCommitService(){
-        CommitService commitService = new CommitService();
-    }
-
-    public static void crearEquipoService(){
-        EquipoService equipoService = new EquipoService();
-    }
-
-    public static void crearOrganizacionService(){
-        OrganizacionService organizacionService = new OrganizacionService();
-    }
-
-    public static void crearRepositorioService(){
-        RepositorioService repositorioService = new RepositorioService();
-    }
-
-    public static void crearTopicoService(){
-        TopicoService topicoService = new TopicoService();
-    }
-
-    public static void crearUsuarioService(){
+        //creamos todos los AppServices
         UsuarioService usuarioService = new UsuarioService();
+        OrganizacionService organizacionService = new OrganizacionService();
+        //EquipoService equipoService = new EquipoService();
+        //RepositorioService repositorioService = new RepositorioService();
+        //CommitService commitService = new CommitService();
+        //TopicoService topicoService = new TopicoService();
     }
 
     public static void main(String[] args) {
-        crearUsuarioService();
-        crearOrganizacionService();
-        //crearEquipoService();
-        //crearRepositorioService();
+        //creamos todos los AppServices
+        //UsuarioService usuarioService = new UsuarioService();
+        //OrganizacionService organizacionService = new OrganizacionService();
+        //EquipoService equipoService = new EquipoService();
+        //RepositorioService repositorioService = new RepositorioService();
+        CommitService commitService = new CommitService();
+        //TopicoService topicoService = new TopicoService();
+
         /*
         //Conexión cliente-servidor
         try {

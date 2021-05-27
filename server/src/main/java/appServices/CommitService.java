@@ -1,5 +1,6 @@
 package appServices;
 
+import dao.CommitDAO;
 import ld.Commit;
 import ld.Repositorio;
 
@@ -13,6 +14,7 @@ public class CommitService {
     private List<Commit> commits = new ArrayList<>();
 
     public CommitService() {
+        CommitDAO.extraerCommits();
         //rellenar lista con BD
     }
 
@@ -20,26 +22,5 @@ public class CommitService {
         Commit commit = new Commit();
         //añadir variables
         commits.add(commit);
-    }
-
-    public synchronized void borrarCommit(int id) {
-        for(int i=0;i<commits.size();i++) {
-            if(commits.get(i).getIdCommit() == id) {
-                commits.remove(commits.get(i));
-                break;
-            }
-        }
-    }
-
-    public synchronized Commit devolverCommit(int id) {
-        Commit commit = null;
-
-        for(int i=0;i<commits.size();i++) {
-            if(commits.get(i).getIdCommit() == id) {
-                commit = commits.get(i);
-                break;
-            }
-        }
-        return commit;
     }
 }
