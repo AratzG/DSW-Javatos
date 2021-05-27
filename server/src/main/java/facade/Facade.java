@@ -57,6 +57,21 @@ public class Facade extends UnicastRemoteObject implements IServer {
         CommitService commitService = new CommitService();
         //TopicoService topicoService = new TopicoService();
 
+        String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
+
+        try
+        {
+            IServer server = new Facade();
+            Registry registry = LocateRegistry.createRegistry((Integer.valueOf(args[1])));
+            registry.rebind(name, server);
+            System.out.println("* Server '" + name + "' active and waiting...");
+        }
+        catch (Exception e)
+        {
+            System.err.println("- Exception running the server: " + e.getMessage());
+            e.printStackTrace();
+        }
+
         /*
         //Conexión cliente-servidor
         try {

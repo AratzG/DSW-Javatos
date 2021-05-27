@@ -1,118 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.datanucleus</groupId>
-    <artifactId>Pom</artifactId>
+    <groupId>es.deusto</groupId>
+    <artifactId>SoftwareDesign_Client</artifactId>
     <packaging>jar</packaging>
     <version>3.0</version>
 
 
-    <name>DSW Javatos parte cliente</name>
-    <url>https://github.com/AratzG/DSW-Javatos</url>
-
-
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <config.files.dir>src/main/resources</config.files.dir>
         <encoding>UTF-8</encoding>
+        <server.IP>127.0.0.1</server.IP>
+        <server.Port>1099</server.Port>
+        <server.Name>Server</server.Name>
     </properties>
 
-
     <dependencies>
+
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <!--
+            <version>4.11</version>
             <scope>test</scope>
-            -->
         </dependency>
+
+
     </dependencies>
 
-
     <build>
-        <sourceDirectory>src/main/java</sourceDirectory>
-        <!--
-       <testSourceDirectory>src/main/java</testSourceDirectory>
-        -->
-       <plugins>
+        <sourceDirectory>src/</sourceDirectory>
+        <testSourceDirectory>src/</testSourceDirectory>
 
-           <plugin>
-               <!-- Read info at
-                     https://maven.apache.org/plugins/maven-antrun-plugin/index.html
-                     https://maven.apache.org/plugins/maven-antrun-plugin/examples/classpaths.html
-                     https://maven.apache.org/plugins/maven-antrun-plugin/usage.html
+        <resources>
+            <resource>
+                <directory>${config.files.dir}</directory>
+            </resource>
+        </resources>
 
-                     In short, Maven-ant run plugin can be used to launch ant targets from maven
-                -->
-
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>3.0.0</version>
-
-                <executions>
-                    <execution>
-                        <!-- Configuration of ant target execution -->
-
-                        <id>myAntRunner</id>
-
-                        <!-- This specifies ant target will be executed in maven package phase
-                                    Option 1 to run is to call
-                                    mvn antrun:run package
-                                    Option 2 to run is to call
-                                    mvn package
-                               -->
-
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-
-                        <configuration>
-
-                            <target>
-
-                                <!-- properties can be passed to ant -->
-
-                                <property name="compile_classpath" refid="maven.compile.classpath"/>
-                                <property name="runtime_classpath" refid="maven.runtime.classpath"/>
-                                <property name="test_classpath" refid="maven.test.classpath"/>
-                                <property name="plugin_classpath" refid="maven.plugin.classpath"/>
-
-                                <ant antfile="${basedir}/build.xml">
-                                    <!--
-                                    <target name="test"/>
-                                    -->
-                                </ant>
-
-                            </target>
-
-                        </configuration>
-                    </execution>
-                </executions>
-
-                <dependencies>
-                    <dependency>
-                        <groupId>commons-net</groupId>
-                        <artifactId>commons-net</artifactId>
-                        <version>1.4.1</version>
-                    </dependency>
-
-                    <dependency>
-                        <groupId>org.apache.ant</groupId>
-                        <artifactId>ant-commons-net</artifactId>
-                        <version>1.8.1</version>
-                    </dependency>
-                </dependencies>
-
-
-
-            </plugin>
-
+        <plugins>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.0.0</version>
@@ -139,39 +65,38 @@
                 </configuration>
             </plugin>
 
-           <plugin>
-               <groupId>org.codehaus.mojo</groupId>
-               <artifactId>exec-maven-plugin</artifactId>
-               <version>1.2.1</version>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
 
-               <configuration>
-                   <mainClass>client.src.main.java.controller.Controller</mainClass>
-                   <arguments>
-                       <argument>${server.IP} </argument>
-                       <argument>${server.Port} </argument>
-                       <argument>${server.Name} </argument>
-                   </arguments>
-               </configuration>
-           </plugin>
+                <configuration>
+                    <mainClass>controller.Controller</mainClass>
 
-           <plugin>
-               <artifactId>maven-assembly-plugin</artifactId>
-               <configuration>
-                   <descriptors>
-                       <descriptor>${basedir}/assembly.xml</descriptor>
-                   </descriptors>
-               </configuration>
-           </plugin>
-           <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-javadoc-plugin</artifactId>
-               <version>3.0.0</version>
-               <configuration>
-                   <show>private</show>
-                   <nohelp>true</nohelp>
-               </configuration>
-           </plugin>
-
+                    <arguments>
+                        <argument>${server.IP}</argument>
+                        <argument>${server.Port}</argument>
+                        <argument>${server.Name}</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>${basedir}/assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
