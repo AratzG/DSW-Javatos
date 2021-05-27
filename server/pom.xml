@@ -15,6 +15,9 @@
     <properties>
         <config.files.dir>src/main/resources</config.files.dir>
         <encoding>UTF-8</encoding>
+        <server.IP>127.0.0.1 </server.IP>
+        <server.Port>1099 </server.Port>
+        <server.Name>HelloServer </server.Name>
     </properties>
 
     <dependencies>
@@ -266,16 +269,23 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.2.1</version>
-
+                <executions>
+                    <execution>
+                        <id>src</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
                 <configuration>
-                    <mainClass>file:${config.files.dir}/remote.Server</mainClass>
-                    <systemProperties>
+                    <mainClass>facade.Facade</mainClass>
+                     <systemProperties>
                         <systemProperty>
                             <key>log4j.configuration</key>
                             <value>file:${config.files.dir}/log4j.properties</value>
                         </systemProperty>
                     </systemProperties>
                 </configuration>
+                </execution>
+               </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -297,29 +307,6 @@
 
         </plugins>
     </build>
-    <!--
-    <profiles>
 
-    <profile>
-        <id>Servidor</id>
-        <build>
-            <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>1.2.1</version>
-                    <configuration>
-                        <mainClass>main.java.Facade.facade</mainClass>
-                        <arguments>
-                            <argument>${}</argument>
-                            <argument>${}</argument>
-                        </arguments>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
-    </profile>
-    </profiles>
-     -->
 </project>
 
