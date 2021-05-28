@@ -21,10 +21,6 @@ public class Repositorio {
     private Usuario usuario;
 
     @Join
-    @Persistent(mappedBy="repos", dependentElement="true")
-    private List<Topico> topicos = new ArrayList<>();
-
-    @Join
     @Persistent(mappedBy="reposUsuario", dependentElement="true")
     private List<Usuario> miembrosRepo = new ArrayList<>();
 

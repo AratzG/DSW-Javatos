@@ -33,11 +33,10 @@ public class Facade extends UnicastRemoteObject implements IServer {
     @Override
     public void extraerDatos() throws RemoteException {
         //creamos todos los AppServices
-        //UsuarioService usuarioService = new UsuarioService();
-        //OrganizacionService organizacionService = new OrganizacionService();
-        //RepositorioService repositorioService = new RepositorioService();
-        //CommitService commitService = new CommitService();
-        //TopicoService topicoService = new TopicoService();
+        UsuarioService usuarioService = new UsuarioService();
+        OrganizacionService organizacionService = new OrganizacionService();
+        RepositorioService repositorioService = new RepositorioService();
+        CommitService commitService = new CommitService();
     }
 
     public static void main(String[] args) {
@@ -46,9 +45,8 @@ public class Facade extends UnicastRemoteObject implements IServer {
         OrganizacionService organizacionService = new OrganizacionService();
         RepositorioService repositorioService = new RepositorioService();
         CommitService commitService = new CommitService();
-        //TopicoService topicoService = new TopicoService();
 
-        /*
+
         String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
         try
