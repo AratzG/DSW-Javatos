@@ -32,19 +32,14 @@ public class CommitDAO {
 
                 Commit commit = new Commit();
 
-                System.out.println(hm);
-                System.out.println("-----------------");
-
                 //ID del commit
                 //commit.setIdCommit(hm.get("node_id"));
                 commit.setIdCommit(i);
-                System.out.println("ID del commit: " + commit.getIdCommit());
 
                 //Nombre del commit
                 String[] obtenerMensaje = hm.toString().split("message=");
                 String[] mensajeObtenido = obtenerMensaje[1].split(",");
                 commit.setNomCommit(mensajeObtenido[0]);
-                System.out.println("Nombre del commit: " + commit.getNomCommit());
 
                 listaCommits.add(commit);
             }

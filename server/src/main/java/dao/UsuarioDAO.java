@@ -17,8 +17,9 @@ public class UsuarioDAO {
         List<Usuario> listaUsuarios = new ArrayList<>();
         int aux = 0;
 
-        //obtenemos un determinado número de usuarios desde github
-        for(int i=1;i<5;i++) {
+        //Vamos a obtener los 20 primeros usuarios (20 primeros IDs) de GitHub
+        //algunos IDs ahora no existen, así que descargaremos menos de 20 usuarios
+        for(int i=1;i<20;i++) {
             aux = i;
             try {
                 GithubGateway c1 = new GithubGateway("user/" + aux);
@@ -45,7 +46,7 @@ public class UsuarioDAO {
         }
         rellenarBD(listaUsuarios);
     }
-    
+
     public static void limpiarBD() {
         PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
         PersistenceManager pm = null;

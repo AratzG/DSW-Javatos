@@ -51,10 +51,10 @@ public class Facade extends UnicastRemoteObject implements IServer {
     public static void main(String[] args) {
         //creamos todos los AppServices
         //UsuarioService usuarioService = new UsuarioService();
-        //OrganizacionService organizacionService = new OrganizacionService();
+        OrganizacionService organizacionService = new OrganizacionService();
         //EquipoService equipoService = new EquipoService();
         //RepositorioService repositorioService = new RepositorioService();
-        CommitService commitService = new CommitService();
+        //CommitService commitService = new CommitService();
         //TopicoService topicoService = new TopicoService();
 
         String name = "//" + args[0] + ":" + args[1] + "/" + args[2];

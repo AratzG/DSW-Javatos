@@ -3,11 +3,13 @@ package dao;
 import gateway.GithubGateway;
 import ld.Organizacion;
 import ld.Usuario;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import javax.jdo.*;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class OrganizacionDAO {
@@ -17,32 +19,27 @@ public class OrganizacionDAO {
 
         List<Organizacion> listaOrgs = new ArrayList<>();
 
-        int aux = 0;
+        try {
+            GithubGateway g1 = new GithubGateway("organizations");
+            Response res = g1.makeGetRequest("");
 
-        //obtenemos un determinado número de usuarios desde github
-        for(int i=1;i<82;i++) {
-            aux = i;
-            try {
-                GithubGateway c1 = new GithubGateway("organizations/" + aux);
-                Response res1 = c1.makeGetRequest("");
+            JSONArray array = res.readEntity(JSONArray.class);
+            System.out.println("Tamanyo del array: " + array.size());
 
-                //obtenemos la respuesta como objeto JSON
-                JSONObject o = res1.readEntity(JSONObject.class);
-
-                //creamos un usuario para cada objeto JSON que obtenemos
+            for(int i=0;i<array.size();i++) {
+                HashMap<String, String> hm = (HashMap<String, String>) array.get(i);
                 Organizacion org = new Organizacion();
-
-                if(o.get("id") != null) org.setIdOrg(aux);
-                if(o.get("login") != null) org.setNomOrg(o.get("login").toString());
-                if(o.get("description") != null) org.setDescripcion(o.get("company").toString());
+                org.setIdOrg(i);
+                org.setNomOrg(hm.get("login"));
+                org.setDescripcion(hm.get("description"));
 
                 listaOrgs.add(org);
-
-            } catch (Exception e) {
-                System.out.println("Catched exception: " + e.getMessage());
-                e.printStackTrace();
             }
+
+        }  catch (Exception e) {
+            System.out.println("Catched exception: " + e.getMessage());
         }
+
         rellenarBD(listaOrgs);
     }
 
