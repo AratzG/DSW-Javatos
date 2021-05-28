@@ -1,9 +1,6 @@
 package ld;
 
-import javax.jdo.annotations.Column;
-import javax.jdo.annotations.Join;
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +14,9 @@ public class Usuario {
     private String empresa;
     private String localizacion;
     private String email;
+
+    @Persistent(mappedBy="usuario")
+    private List<Commit> listaCommits = new ArrayList<>();
 
     @Join
     private List<Organizacion> orgsUsuario = new ArrayList<>();

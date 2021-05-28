@@ -20,41 +20,34 @@ public class CommitDAO {
         List<Commit> listaCommits = new ArrayList<>();
 
         try {
+
             //en este ejemplo, descargaremos todos los commits de nuestro repositorio
             GithubGateway c1 = new GithubGateway("repos/AratzG/DSW-Javatos/commits");
             Response res = c1.makeGetRequest("");
 
             JSONArray array = res.readEntity(JSONArray.class);
 
-            HashMap<String, String> hm = (HashMap<String, String>)array.get(0);
+            for(int i=0;i<array.size();i++) {
+                HashMap<String, String> hm = (HashMap<String, String>)array.get(i);
 
-            Commit commit = new Commit();
+                Commit commit = new Commit();
 
-            System.out.println(hm);
-            System.out.println("-----------------");
+                System.out.println(hm);
+                System.out.println("-----------------");
 
-            //ID del commit
-            commit.setIdCommit(hm.get("node_id"));
-            System.out.println("ID del commit: " + commit.getIdCommit());
+                //ID del commit
+                //commit.setIdCommit(hm.get("node_id"));
+                commit.setIdCommit(i);
+                System.out.println("ID del commit: " + commit.getIdCommit());
 
-            //Nombre del commit
-            String[] obtenerMensaje = hm.toString().split("message=");
-            String[] mensajeObtenido = obtenerMensaje[1].split(",");
-            commit.setNomCommit(mensajeObtenido[0]);
-            System.out.println("Nombre del commit: " + commit.getNomCommit());
+                //Nombre del commit
+                String[] obtenerMensaje = hm.toString().split("message=");
+                String[] mensajeObtenido = obtenerMensaje[1].split(",");
+                commit.setNomCommit(mensajeObtenido[0]);
+                System.out.println("Nombre del commit: " + commit.getNomCommit());
 
-            //Usuario que hace el commit, para ello habrá que descargar dicho usuario desde API Github
-            String[] obtenerUsuario = hm.toString().split("login=");
-            String[] usuarioObtenido = obtenerUsuario[1].split(",");
-            commit.setUsuario(UsuarioDAO.extraerUnUsuario("users/" + usuarioObtenido[0]));
-            System.out.println("Usuario del commit: " + commit.getUsuario().getNomUsuario());
-
-            //Repo del commit
-            commit.setRepo(RepositorioDAO.extraerUnRepo("repos/AratzG/DSW-Javatos"));
-            System.out.println("Repo del commit: " + commit.getRepo().getNomRepo());
-
-            listaCommits.add(commit);
-
+                listaCommits.add(commit);
+            }
         } catch (Exception e) {
             System.out.println("Catched exception: " + e.getMessage());
         }

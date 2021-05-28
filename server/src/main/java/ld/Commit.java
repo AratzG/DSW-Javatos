@@ -9,7 +9,7 @@ public class Commit
 {
 
     @PrimaryKey
-    private String idCommit;
+    private int idCommit;
     private String nomCommit;
 
     @Column(name="Usuario")
@@ -21,18 +21,16 @@ public class Commit
     public Commit() {
     }
 
-    public Commit(String idCommit, String nomCommit, Usuario usuario, Repositorio repo) {
+    public Commit(int idCommit, String nomCommit) {
         this.idCommit = idCommit;
         this.nomCommit = nomCommit;
-        this.usuario = usuario;
-        this.repo = repo;
     }
 
-    public String getIdCommit() {
+    public int getIdCommit() {
         return idCommit;
     }
 
-    public void setIdCommit(String idCommit) {
+    public void setIdCommit(int idCommit) {
         this.idCommit = idCommit;
     }
 
