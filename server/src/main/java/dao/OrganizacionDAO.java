@@ -24,7 +24,6 @@ public class OrganizacionDAO {
             Response res = g1.makeGetRequest("");
 
             JSONArray array = res.readEntity(JSONArray.class);
-            System.out.println("Tamanyo del array: " + array.size());
 
             for(int i=0;i<array.size();i++) {
                 HashMap<String, String> hm = (HashMap<String, String>) array.get(i);
@@ -60,7 +59,7 @@ public class OrganizacionDAO {
 
             Query<Organizacion> query1 = pm.newQuery(Organizacion.class);
             System.out.println(" * '" + query1.deletePersistentAll() +
-                    "' users and their accounts deleted from the DB.");
+                    "' organizations deleted from the DB.");
 
             tx.commit();
         } catch (Exception ex) {
@@ -89,7 +88,7 @@ public class OrganizacionDAO {
         //Después, rellenamos la BD
         try
         {
-            System.out.println("- Store objects in the DB");
+            System.out.println("- Store organizations in the DB");
 
             pm = pmf.getPersistenceManager();
             tx = pm.currentTransaction();
@@ -102,7 +101,7 @@ public class OrganizacionDAO {
 
             tx.commit();
         } catch (Exception ex) {
-            System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+            System.err.println(" $ Error storing organizations in the DB: " + ex.getMessage());
             ex.printStackTrace();
         }
 

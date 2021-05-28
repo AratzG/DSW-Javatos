@@ -1,15 +1,8 @@
 package facade;
 
 import appServices.*;
-import dao.UsuarioDAO;
-import gateway.GithubGateway;
-import ld.Equipo;
-import ld.Organizacion;
-import ld.Repositorio;
-import ld.Usuario;
 import remote.IServer;
 
-import javax.jdo.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
@@ -40,9 +33,8 @@ public class Facade extends UnicastRemoteObject implements IServer {
     @Override
     public void extraerDatos() throws RemoteException {
         //creamos todos los AppServices
-        UsuarioService usuarioService = new UsuarioService();
-        OrganizacionService organizacionService = new OrganizacionService();
-        //EquipoService equipoService = new EquipoService();
+        //UsuarioService usuarioService = new UsuarioService();
+        //OrganizacionService organizacionService = new OrganizacionService();
         //RepositorioService repositorioService = new RepositorioService();
         //CommitService commitService = new CommitService();
         //TopicoService topicoService = new TopicoService();
@@ -50,13 +42,13 @@ public class Facade extends UnicastRemoteObject implements IServer {
 
     public static void main(String[] args) {
         //creamos todos los AppServices
-        //UsuarioService usuarioService = new UsuarioService();
+        UsuarioService usuarioService = new UsuarioService();
         OrganizacionService organizacionService = new OrganizacionService();
-        //EquipoService equipoService = new EquipoService();
-        //RepositorioService repositorioService = new RepositorioService();
-        //CommitService commitService = new CommitService();
+        RepositorioService repositorioService = new RepositorioService();
+        CommitService commitService = new CommitService();
         //TopicoService topicoService = new TopicoService();
 
+        /*
         String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
         try

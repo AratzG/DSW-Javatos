@@ -22,8 +22,6 @@ public class Usuario {
     private List<Organizacion> orgsUsuario = new ArrayList<>();
     @Join
     private List<Repositorio> reposUsuario = new ArrayList<>();
-    @Join
-    private List<Equipo> equiposUsuario = new ArrayList<>();
 
     public Usuario() {
     }

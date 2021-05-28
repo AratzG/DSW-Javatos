@@ -63,7 +63,7 @@ public class UsuarioDAO {
 
             Query<Usuario> query1 = pm.newQuery(Usuario.class);
             System.out.println(" * '" + query1.deletePersistentAll() +
-                    "' users and their accounts deleted from the DB.");
+                    "' users deleted from the DB.");
 
             tx.commit();
         } catch (Exception ex) {
@@ -92,7 +92,7 @@ public class UsuarioDAO {
         //Después, rellenamos la BD
         try
         {
-            System.out.println("- Store objects in the DB");
+            System.out.println("- Store users in the DB");
 
             pm = pmf.getPersistenceManager();
             tx = pm.currentTransaction();
@@ -105,7 +105,7 @@ public class UsuarioDAO {
 
             tx.commit();
         } catch (Exception ex) {
-            System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+            System.err.println(" $ Error storing users in the DB: " + ex.getMessage());
             ex.printStackTrace();
         }
 

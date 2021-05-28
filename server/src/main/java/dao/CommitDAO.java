@@ -66,7 +66,7 @@ public class CommitDAO {
 
             Query<Commit> query1 = pm.newQuery(Commit.class);
             System.out.println(" * '" + query1.deletePersistentAll() +
-                    "' users and their accounts deleted from the DB.");
+                    "' commits deleted from the DB.");
 
             tx.commit();
         } catch (Exception ex) {
@@ -95,7 +95,7 @@ public class CommitDAO {
         //Después, rellenamos la BD
         try
         {
-            System.out.println("- Store objects in the DB");
+            System.out.println("- Store commits in the DB");
 
             pm = pmf.getPersistenceManager();
             tx = pm.currentTransaction();
@@ -108,7 +108,7 @@ public class CommitDAO {
 
             tx.commit();
         } catch (Exception ex) {
-            System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+            System.err.println(" $ Error storing commits in the DB: " + ex.getMessage());
             ex.printStackTrace();
         }
 

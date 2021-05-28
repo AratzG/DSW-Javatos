@@ -23,7 +23,6 @@ public class RepositorioDAO {
             Response res = g1.makeGetRequest("");
 
             JSONArray array = res.readEntity(JSONArray.class);
-            System.out.println("Tamaño del array: " + array.size());
 
             for(int i=0;i<array.size();i++) {
                 HashMap<String, String> hm = (HashMap<String, String>) array.get(i);
@@ -58,7 +57,7 @@ public class RepositorioDAO {
 
             Query<Repositorio> query1 = pm.newQuery(Repositorio.class);
             System.out.println(" * '" + query1.deletePersistentAll() +
-                    "' repositories  deleted from the DB.");
+                    "' repositories deleted from the DB.");
 
             tx.commit();
         } catch (Exception ex) {
@@ -87,7 +86,7 @@ public class RepositorioDAO {
         //Después, rellenamos la BD
         try
         {
-            System.out.println("- Store objects in the DB");
+            System.out.println("- Store repositories in the DB");
 
             pm = pmf.getPersistenceManager();
             tx = pm.currentTransaction();
@@ -100,7 +99,7 @@ public class RepositorioDAO {
 
             tx.commit();
         } catch (Exception ex) {
-            System.err.println(" $ Error storing objects in the DB: " + ex.getMessage());
+            System.err.println(" $ Error storing repositories in the DB: " + ex.getMessage());
             ex.printStackTrace();
         }
 

@@ -13,8 +13,6 @@ public class Repositorio {
 
     private String nomRepo;
     private String descripcion;
-    private Date fechaCreacion;
-    private Date ultimaActualizacion;
 
     @Column(name="Organizacion")
     private Organizacion org;
@@ -38,8 +36,6 @@ public class Repositorio {
         this.idRepo = idRepo;
         this.nomRepo = nomRepo;
         this.descripcion = descripcion;
-        this.fechaCreacion = fechaCreacion;
-        this.ultimaActualizacion = ultimaActualizacion;
         this.org = org;
         this.usuario = usuario;
     }
@@ -66,22 +62,6 @@ public class Repositorio {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public Date getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public Date getUltimaActualizacion() {
-        return ultimaActualizacion;
-    }
-
-    public void setUltimaActualizacion(Date ultimaActualizacion) {
-        this.ultimaActualizacion = ultimaActualizacion;
     }
 
     public Organizacion getOrg() {
