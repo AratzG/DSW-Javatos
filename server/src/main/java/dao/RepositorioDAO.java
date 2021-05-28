@@ -2,10 +2,12 @@ package dao;
 import gateway.GithubGateway;
 import ld.Repositorio;
 import ld.Usuario;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import javax.jdo.*;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class RepositorioDAO {
@@ -15,59 +17,29 @@ public class RepositorioDAO {
 
         List<Repositorio> listaRepos = new ArrayList<>();
 
-        int aux = 0;
-
-        //obtenemos un determinado número de repositorios desde github
-        for(int i=1;i<82;i++) {
-            aux = i;
-            try {
-                GithubGateway c1 = new GithubGateway("repos/" + aux);
-                Response res1 = c1.makeGetRequest("");
-
-                //obtenemos la respuesta como objeto JSON
-                JSONObject o = res1.readEntity(JSONObject.class);
-
-                //creamos un usuario para cada objeto JSON que obtenemos
-                Repositorio rep = new Repositorio();
-
-                if(o.get("id") != null) rep.setIdRepo(aux);
-                if(o.get("name") != null) rep.setNomRepo(o.get("name").toString());
-                //(no he visto el atributo en la API)if(o.get("description") != null) rep.setDescripcion(o.get("description").toString());
-
-                listaRepos.add(rep);
-
-            } catch (Exception e) {
-                System.out.println("Catched exception: " + e.getMessage());
-                e.printStackTrace();
-            }
-        }
-        rellenarBD(listaRepos);
-    }
-
-    public static Repositorio extraerUnRepo(String accessPoint) {
-        //en este método descargamos un repositorio a partir del accessPoint
-
-        List<Repositorio> listaRepos = new ArrayList<>();
-        Repositorio repo = new Repositorio();
-
         try {
-            GithubGateway c1 = new GithubGateway(accessPoint);
-            Response res1 = c1.makeGetRequest("");
+            //a modo de ejemplo, descargaremos todos los repos de RiotGames
+            GithubGateway g1 = new GithubGateway("orgs/riotgames/repos");
+            Response res = g1.makeGetRequest("");
 
-            //obtenemos la respuesta como objeto JSON
-            JSONObject o = res1.readEntity(JSONObject.class);
+            JSONArray array = res.readEntity(JSONArray.class);
+            System.out.println("Tamaño del array: " + array.size());
 
-            if(o.get("id") != null) repo.setIdRepo((int) o.get("id"));
-            if(o.get("name") != null) repo.setNomRepo(o.get("name").toString());
+            for(int i=0;i<array.size();i++) {
+                HashMap<String, String> hm = (HashMap<String, String>) array.get(i);
+                Repositorio repo = new Repositorio();
+                repo.setIdRepo(i);
+                repo.setNomRepo(hm.get("name"));
+                repo.setDescripcion(hm.get("description"));
 
-            listaRepos.add(repo);
+                listaRepos.add(repo);
+            }
 
         } catch (Exception e) {
             System.out.println("Catched exception: " + e.getMessage());
-            e.printStackTrace();
         }
+
         rellenarBD(listaRepos);
-        return repo;
     }
 
     public static void limpiarBD() {
