@@ -71,7 +71,7 @@
                 <version>1.2.1</version>
 
                 <configuration>
-                    <mainClass>controller.Controller</mainClass>
+                    <mainClass>main.java.controller.Controller</mainClass>
 
                     <arguments>
                         <argument>${server.IP}</argument>
