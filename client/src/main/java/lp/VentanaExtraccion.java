@@ -1,9 +1,9 @@
-package main.java.lp;
+package lp;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import main.java.controller.Controller;
+import controller.Controller;
 public class VentanaExtraccion extends JFrame {
     private JButton button1;
     private JPanel panel1;

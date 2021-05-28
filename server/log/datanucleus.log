@@ -2037,3 +2037,13 @@ org.datanucleus.exceptions.NucleusUserException: Clase "ld.Repositorio" campo "m
 19:11:01,570 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\DSW-Javatos\server\target\classes\ld\Usuario.class" con definicion enhanced
 19:11:01,570 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Usuario
 19:11:01,585 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 5 clases. Tiempos : input=219 ms, enhance=94 ms, total=313 ms. Compruebe el LOG para los detalles
+22:59:19,286 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (versión 5.2.8) para el API "JDO" utilisando el JRE "{2}"
+22:59:19,521 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\DSW-Javatos\server\target\classes\ld\Commit.class" con definicion enhanced
+22:59:19,521 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Commit
+22:59:19,536 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\DSW-Javatos\server\target\classes\ld\Organizacion.class" con definicion enhanced
+22:59:19,536 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Organizacion
+22:59:19,536 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\DSW-Javatos\server\target\classes\ld\Repositorio.class" con definicion enhanced
+22:59:19,536 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Repositorio
+22:59:19,552 (main) INFO  [DataNucleus.Enhancer] - Escribiendo el archivo de clase "C:\Users\Alumno\Desktop\DSW-Javatos\server\target\classes\ld\Usuario.class" con definicion enhanced
+22:59:19,552 (main) INFO  [DataNucleus.Enhancer] - ENHANCED (Persistable) : ld.Usuario
+22:59:19,552 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer ha terminado con exito para 4 clases. Tiempos : input=172 ms, enhance=94 ms, total=266 ms. Compruebe el LOG para los detalles

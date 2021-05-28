@@ -1,6 +1,6 @@
-package main.java.controller;
+package controller;
 
-import main.java.lp.VentanaExtraccion;
+import lp.VentanaExtraccion;
 import serviceLocator.ServiceLocator;
 
 import java.rmi.RemoteException;
